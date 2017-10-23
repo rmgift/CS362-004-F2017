@@ -1327,7 +1327,8 @@ int getVillageEffect(int currentPlayer, int handPos, struct gameState *state)
 	drawCard(currentPlayer, state); // +1 Card
 	state->numActions = state->numActions + 2; // +2 Actions
 	// BUG: in addition to Actions, player receives 2 coins
-	state->coins += 5;
+	//state->coins += 5;
+	state->coins = state->coins + 5;
 	discardCard(handPos, currentPlayer, state, 0); // discard played card from hand
 	return 0;
 }
