@@ -1,0 +1,152 @@
+        -:    0:Source:testme.c
+        -:    0:Graph:./testme.gcno
+        -:    0:Data:./testme.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <string.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include <time.h>
+        -:    5:#include <limits.h>
+        -:    6:
+function inputChar called 5947095 returned 100% blocks executed 100%
+  5947095:    7:char inputChar()
+        -:    8:{	// TODO: rewrite this function
+        -:    9:	// ASCII base character range is 0 to 127
+        -:   10:	// exclude all values less than 32, as they're not in our testing range
+        -:   11:	// also exclude value 126 and 127
+        -:   12:	// value = ((rand() % (maxValue - minValue + 1)) + minValue)
+        -:   13:	// min value = 32 && maxValue = 125
+  5947095:   14:	int minVal = 32, maxVal = 125;
+  5947095:   15:	char newC = ((rand() % (maxVal - minVal + 1)) + minVal);
+call    0 returned 100%
+  5947095:   16:	return newC;
+        -:   17:}
+        -:   18:
+function inputString called 5947095 returned 100% blocks executed 100%
+  5947095:   19:char *inputString()
+        -:   20:{	// TODO: rewrite this function
+        -:   21:	// ASCII base character range for lowercase letters is 97 to 122
+        -:   22:	// value = ((rand() % (maxValue - minValue + 1)) + minValue)
+  5947095:   23:	char *newS = malloc(6 * sizeof(char));
+  5947095:   24:	memset(newS, '\0', sizeof(newS));
+        -:   25:	int i;
+        -:   26:	// only need ASCII values from e to t so limit or else it takes forever
+  5947095:   27:	int min = 101, max = 116;
+ 35682570:   28:	for (i = 0; i < 5; i++)
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        -:   29:	{
+ 29735475:   30:		newS[i] = ((rand() % (max - min + 1)) + min);
+call    0 returned 100%
+        -:   31:	}
+  5947095:   32:	newS[5] = '\0';
+  5947095:   33:	return newS;
+        -:   34:}
+        -:   35:
+function testme called 2 returned 0% blocks executed 100%
+        2:   36:void testme()
+        -:   37:{
+        2:   38:	int tcCount = 0;
+        -:   39:	char *s;
+        -:   40:	char c;
+        2:   41:	int state = 0;
+        -:   42:	while (1)
+        -:   43:	{
+  5947095:   44:		tcCount++;
+  5947095:   45:		c = inputChar();
+call    0 returned 100%
+  5947095:   46:		s = inputString();
+call    0 returned 100%
+  5947095:   47:		printf("Iteration %d: c = %c, s = %s, state = %d\n", tcCount, c, s, state);
+call    0 returned 100%
+        -:   48:		// if char is [ = ascii value 91 and state is 0, set state to 1
+  5947095:   49:		if (c == '[' && state == 0) state = 1;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   50:		// if char is ( = ascii value 40 and state is 1, set state to 2
+  5947095:   51:		if (c == '(' && state == 1) state = 2;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   52:		// if char is { = ascii value 123 and state is 2, set state to 3
+  5947095:   53:		if (c == '{' && state == 2) state = 3;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   54:		// if char is a space = ascii value 32 and state is 3, set state to 4
+  5947095:   55:		if (c == ' '&& state == 3) state = 4;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   56:		// if char is a = ascii value 97 and state is 4, set state to 5 
+  5947095:   57:		if (c == 'a' && state == 4) state = 5;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   58:		// if char is x = ascii value 120 and state is 5, set state to 6
+  5947095:   59:		if (c == 'x' && state == 5) state = 6;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   60:		// if char is } = ascii value 125 and state is 6, set state to 7
+  5947095:   61:		if (c == '}' && state == 6) state = 7;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   62:		// if char is ) = ascii value 41 and state is 7, set state to 8
+  5947095:   63:		if (c == ')' && state == 7) state = 8;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   64:		// if char is ] = ascii value 93 and state is 8, set state to 9
+  5947095:   65:		if (c == ']' && state == 8) state = 9;
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:   66:		// if string is reset\0 and state is 9, print out error
+        -:   67:		// reset\0 ascii value = 114 101 115 101 116 10 
+  5947095:   68:		if (s[0] == 'r' && s[1] == 'e' && s[2] == 's' && s[3] == 'e' && s[4] == 't' && s[5] == '\0' && state == 9)
+branch  0 taken 6% (fallthrough)
+branch  1 taken 94%
+branch  2 taken 6% (fallthrough)
+branch  3 taken 94%
+branch  4 taken 6% (fallthrough)
+branch  5 taken 94%
+branch  6 taken 5% (fallthrough)
+branch  7 taken 95%
+branch  8 taken 3% (fallthrough)
+branch  9 taken 97%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0%
+branch 12 taken 100% (fallthrough)
+branch 13 taken 0%
+        -:   69:		{
+        2:   70:			printf("error ");
+call    0 returned 100%
+        2:   71:			exit(200);
+call    0 returned 0%
+        -:   72:		}
+  5947093:   73:	}
+        -:   74:}
+        -:   75:
+function main called 2 returned 0% blocks executed 80%
+        2:   76:int main(int argc, char *argv[])
+        -:   77:{
+        2:   78:	srand(time(NULL));
+call    0 returned 100%
+call    1 returned 100%
+        2:   79:	testme();
+call    0 returned 0%
+    #####:   80:	return 0;
+        -:   81:}
