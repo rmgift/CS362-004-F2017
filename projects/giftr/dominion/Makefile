@@ -30,6 +30,12 @@ testBuyCard: testDrawCard.c dominion.o rngs.o
 	#gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
 	#gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
 
+#randoTests: randomtestcard1.c randomtestcard2.c randomtestcardadventurer.c dominion.o rngs.o
+	#gcc -o randomtestcard1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
+	#gcc -o randomtestcard2 -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
+	#gcc -o randomtestcardadventurer -g randomtestcardadventurer.c dominion.o rngs.o $(CFLAGS)
+
+
 myUnitTests: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
 	#use gcov -b -f option for all branch probabilities
 	echo "Results for running Assignment 3 Unit Tests:" > unittestresults.out
@@ -84,6 +90,45 @@ myUnitTests: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtes
 
 	cat dominion.c.gcov >> unittestresults.out
 
+
+myRT1: randomtestcard1.c dominion.o rngs.o
+
+	echo "Results for running Assignment 4 Random Testing 1:" > randomtestcard1.out
+
+	echo "randomcardtest1.c:" >> randomtestcard1.out
+	gcc -o rtc1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
+	./rtc1 >> randomtestcard1.out
+	gcov -f dominion.c >> randomtestcard1.out
+	cat dominion.c.gcov >> randomtestcard1.out
+
+myRT2: randomtestcard2.c dominion.o rngs.o
+
+	echo "Results for running Assignment 4 Random Testing 2:" > randomtestcard2.out
+	echo "randomtestcard2.c:" >> randomtestcard2.out
+	gcc -o rtc2 -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
+	./rtc2 >> randomtestcard2.out
+	gcov -f dominion.c >> randomtestcard2.out
+	cat dominion.c.gcov >> randomtestcard2.out
+
+myRT3: randomtestcard3.c dominion.o rngs.o
+
+	echo "Results for running Assignment 4 Random Testing 3:" > randomtestcard3.out
+	echo "randomtestcard3.c:" >> randomtestcard3.out
+	gcc -o rtc3 -g randomtestcard3.c dominion.o rngs.o $(CFLAGS)
+	./rtc3 >> randomtestresults.out
+	gcov -f dominion.c >> randomtestcard3.out
+	cat dominion.c.gcov >> randomtestcard3.out
+
+myRTA: randomtestcardadventurer.c dominion.o rngs.o
+
+	echo "Results for running Assignment 4 Random Testing Adventurer:" > randomtestadventurer.out
+	echo "randomtestcardadventurer.c:" >> randomtestadventurer.out
+	gcc -o rtca -g randomtestcardadventurer.c dominion.o rngs.o $(CFLAGS)
+	./rtca >> randomtestadventurer.out
+	gcov -f dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
@@ -99,7 +144,9 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 myUnitTests
+randomTests: myRT1 myRT2 myRTA
+
+all: playdom player testDrawCard testBuyCard badTestDrawCard myUnitTests 
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard badTestDrawCard testDrawCard.exe unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestcard3 randomtestcardadventurer
