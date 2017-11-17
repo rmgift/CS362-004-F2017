@@ -18,24 +18,6 @@ badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 
-#cardTests: cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
-	#gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
-
-#unitTests: unittest1.c dominion.o rngs.o
-	#gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
-
-#randoTests: randomtestcard1.c randomtestcard2.c randomtestcardadventurer.c dominion.o rngs.o
-	#gcc -o randomtestcard1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o randomtestcard2 -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
-	#gcc -o randomtestcardadventurer -g randomtestcardadventurer.c dominion.o rngs.o $(CFLAGS)
-
-
 myUnitTests: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
 	#use gcov -b -f option for all branch probabilities
 	echo "Results for running Assignment 3 Unit Tests:" > unittestresults.out
@@ -146,7 +128,9 @@ player: player.c interface.o
 
 randomTests: myRT1 myRT2 myRTA
 
+myTests: myUnitTests randomTests
+
 all: playdom player testDrawCard testBuyCard badTestDrawCard myUnitTests 
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard badTestDrawCard testDrawCard.exe unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestcard3 randomtestcardadventurer
+	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard badTestDrawCard testDrawCard.exe unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 rtc1 rtc2 rtc3 rtca

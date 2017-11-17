@@ -1,0 +1,71 @@
+Results for running Assignment 5 Card Test 3:
+cardtest3.c:
+
+ _____________________________________________________________________________
+|                                                                             |
+|                            great_hall TESTING                                |
+|_____________________________________________________________________________|
+
+   Test 3.1: Verify Current Hand Count
+    Current Hand Count: 5	Expected Hand Count: 5
+
+   Test 3.2: Verify great_hall was Played
+    Current Played: 16		Expected Played: 16
+
+   Test 3.3: Verify Player Number of Actions
+    Current Actions: 0		Expected Actions: 1
+
+   Test 3.4: Verify Player Coin Count
+    Current Coins: 4		Expected Coins: 4
+
+   Test 3.5: Verify Player Buys Count
+    Current Buys: 1		Expected Buys: 1
+
+   Test 3.6: Verify Current Player Score
+    Current Score: 1		Expected Score: 2
+
+   Test 3.7: Verify Other Player Score
+    Current Score: 0		Expected Score: 0
+
+   Test 3.8: Verify Treasure and Victory Card Supply Unchanged
+    Curse Passed.		Current: 10	Expected: 10
+    Estate Passed.		Current: 8	Expected: 8
+    Duchy Passed.		Current: 8	Expected: 8
+    Province Passed.		Current: 8	Expected: 8
+    Copper Passed.		Current: 46	Expected: 46
+    Silver Passed.		Current: 40	Expected: 40
+    Gold Passed.		Current: 30	Expected: 30
+
+   Test 3.9: Verify Kingdom Card Supply Unchanged
+    Adventurer Passed.		Current: 10	Expected: 10
+    Council_Room Passed.	Current: 10	Expected: 10
+    Feast Passed.		Current: 10	Expected: 10
+    Gardens Passed.		Current: 8	Expected: 8
+    Mine Passed.		Current: 10	Expected: 10
+    Remodel Passed.		Current: 10	Expected: 10
+    Smithy Passed.		Current: 10	Expected: 10
+    Village Passed.		Current: 10	Expected: 10
+    Baron Passed.		Current: 10	Expected: 10
+    Great_Hall Passed.		Current: 8	Expected: 8
+
+ _____________________________________________________________________________
+|                                                                             |
+|                        great_hall TESTING SUMMARY                            |
+|_____________________________________________________________________________|
+
+    Test 3.1 Passed.
+    Test 3.2 Passed.
+    			Test 3.3 Failed.
+    			Test 3.4 Failed.
+    Test 3.5 Passed.
+    			Test 3.6 Failed.
+    Test 3.7 Passed.
+    Test 3.8 Passed.
+    Test 3.9 Passed.
+
+    6 Out of 9 Tests Passed
+ _____________________________________________________________________________
+|                                                                             |
+|                      great_hall TESTING COMPLETED                            |
+|_____________________________________________________________________________|
+

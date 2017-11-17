@@ -1,0 +1,75 @@
+Results for running Assignment 5 Card Test 2:
+cardtest2.c:
+
+ _____________________________________________________________________________
+|                                                                             |
+|                            adventurer TESTING                               |
+|_____________________________________________________________________________|
+
+   Test 2.1: Verify Current Hand Count
+    Current Hand Count: 7	Expected Hand Count: 6
+
+   Test 2.2: Verify adventurer Played
+    Current Played: 0		Expected Played: 7
+
+   Test 2.3: Verify Correct Cards were Added and Discarded
+    cards in Hand 5, cards on Deck 5, cards in discard 0
+
+   Test 2.4: Verify Player Number of Actions
+    Current Actions: 1		Expected Actions: 0
+
+   Test 2.5: Verify Player Coin Count
+    Current Coins: 4		Expected Coins: 4
+
+   Test 2.6: Verify Player Buys Count
+    Current Buys: 1		Expected Buys: 1
+
+   Test 2.7: Verify Current Player Score
+    Current Score: 0		Expected Score: 0
+
+   Test 2.8: Verify Other Player Score
+    Current Score: 0		Expected Score: 0
+
+   Test 2.9: Verify Treasure and Victory Card Supply Unchanged
+    Curse Passed.		Current: 10	Expected: 10
+    Estate Passed.		Current: 8	Expected: 8
+    Duchy Passed.		Current: 8	Expected: 8
+    Province Passed.		Current: 8	Expected: 8
+    Copper Passed.		Current: 46	Expected: 46
+    Silver Passed.		Current: 40	Expected: 40
+    Gold Passed.		Current: 30	Expected: 30
+
+   Test 2.10: Verify Kingdom Card Supply Unchanged
+    Adventurer Passed.		Current: 10	Expected: 10
+    Council_Room Passed.	Current: 10	Expected: 10
+    Feast Passed.		Current: 10	Expected: 10
+    Gardens Passed.		Current: 8	Expected: 8
+    Mine Passed.		Current: 10	Expected: 10
+    Remodel Passed.		Current: 10	Expected: 10
+    Smithy Passed.		Current: 10	Expected: 10
+    Village Passed.		Current: 10	Expected: 10
+    Baron Passed.		Current: 10	Expected: 10
+    Great_Hall Passed.		Current: 8	Expected: 8
+
+ _____________________________________________________________________________
+|                                                                             |
+|                        adventurer TESTING SUMMARY                           |
+|_____________________________________________________________________________|
+
+    			Test 2.1 Failed.
+    			Test 2.2 Failed.
+    			Test 2.3 Failed.
+    			Test 2.4 Failed.
+    Test 2.5 Passed.
+    Test 2.6 Passed.
+    Test 2.7 Passed.
+    Test 2.8 Passed.
+    Test 2.9 Passed.
+    Test 2.10 Passed.
+
+    6 Out of 10 Tests Passed
+ _____________________________________________________________________________
+|                                                                             |
+|                       adventurer TESTING COMPLETED                          |
+|_____________________________________________________________________________|
+

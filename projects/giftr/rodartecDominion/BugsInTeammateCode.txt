@@ -1,0 +1,9 @@
+Bug 1:
+great_hall card is supposed to return +1 card and +1 action
+However, when the function is called it only returns +1 card
+This bug can be found in the dominion.c file on lines 731 to 741 
+
+Bug 2:
+smithy card is supposed to discard the current card played, the smithy card,
+but it discards the wrong card (card in position number 1 rather than 0)
+This bug can be found in the dominion.c file on line 691.

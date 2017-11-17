@@ -1195,13 +1195,10 @@ int updateCoins(int player, struct gameState *state, int bonus)
 // function
 int getSmithyEffect(int i, int currentPlayer, int handPos, struct gameState *state)
 {
-	// for (i = 0; i < 3; i++)
-	// BUG: changed from i < 3 to i < 4, allowing SMITHY to draw 4 cards
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 3; i++)
 		drawCard(currentPlayer, state);
+
 	discardCard(handPos, currentPlayer, state, 0);
-	// BUG: give the current player 2 additional coins
-	state->coins = state->coins + 2;
 	return 0;
 }
 
@@ -1216,9 +1213,7 @@ int getAdventurerEffect(int currentPlayer, int drawntreasure, int z, int cardDra
 		}
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-		//if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-		// BUG: only counts copper or silver as treasure cards, therefore gold can be drawn but is then discarded
-		if (cardDrawn == copper || cardDrawn == silver)
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 		{
 				drawntreasure++;
 		}
@@ -1245,9 +1240,7 @@ int getBaronEffect(int currentPlayer, int choice1, struct gameState *state)
 		int card_not_discarded = 1;//Flag for discard set!
 		while(card_not_discarded){
 			if (state->hand[currentPlayer][p] == estate){//Found an estate card!
-				//state->coins += 4;//Add 4 coins to the amount of coins
-				// BUG: rather than getting 4 coins, player receives 5 coins
-				state->coins += 5;
+				state->coins += 4;//Add 4 coins to the amount of coins
 				state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
 				state->discardCount[currentPlayer]++;
 				for (;p < state->handCount[currentPlayer]; p++){
@@ -1306,8 +1299,6 @@ int getMineEffect(int i, int j, int currentPlayer, int handPos, int choice1, int
 		return -1;
 	}
 	gainCard(choice2, state, 2, currentPlayer);
-	// BUG: increase the number of actions by 1
-	state->numActions = state->numActions + 1;
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
 	//discard trashed card
@@ -1326,9 +1317,6 @@ int getVillageEffect(int currentPlayer, int handPos, struct gameState *state)
 {
 	drawCard(currentPlayer, state); // +1 Card
 	state->numActions = state->numActions + 2; // +2 Actions
-	// BUG: in addition to Actions, player receives 2 coins
-	//state->coins += 5;
-	state->coins = state->coins + 5;
 	discardCard(handPos, currentPlayer, state, 0); // discard played card from hand
 	return 0;
 }

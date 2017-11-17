@@ -1,0 +1,131 @@
+Results for running Assignment 5 Card Test 4:
+cardtest4.c:
+
+ _____________________________________________________________________________
+|                                                                             |
+|                               baron TESTING                                 |
+|                                                                             |
+|               FIRST ROUND OF TESTS: DISCARD ESTATE FOR 4 COINS              |
+|_____________________________________________________________________________|
+
+   Test 1.1: Verify baron was Played
+    Current Played: 0		Expected Played: 15
+
+   Test 4.2: Verify Player Buys Count
+    Current Buys: 1		Expected Buys: 2
+
+   Test 4.3: Verify Player Coin Count
+    Current Coins: 4		Expected Coins: 8
+
+   Test 4.4: Verify Current Hand Count
+    Current Hand Count: 7	Expected Hand Count: 4
+
+   Test 4.5: Verify Player Number of Actions
+    Current Actions: 1		Expected Actions: 0
+
+   Test 4.6: Verify Current Player Score
+    Current Score: 2		Expected Score: 2
+
+   Test 4.7: Verify Other Player Score
+    Current Score: 0		Expected Score: 0
+
+   Test 4.8: Verify Treasure and Victory Card Supply Unchanged
+    Curse Passed.		Current: 10	Expected: 10
+    Estate Passed.		Current: 8	Expected: 8
+    Duchy Passed.		Current: 8	Expected: 8
+    Province Passed.		Current: 8	Expected: 8
+    Copper Passed.		Current: 46	Expected: 46
+    Silver Passed.		Current: 40	Expected: 40
+    Gold Passed.		Current: 30	Expected: 30
+
+   Test 4.9: Verify Kingdom Card Supply Unchanged
+    Adventurer Passed.		Current: 10	Expected: 10
+    Council_Room Passed.	Current: 10	Expected: 10
+    Feast Passed.		Current: 10	Expected: 10
+    Gardens Passed.		Current: 8	Expected: 8
+    Mine Passed.		Current: 10	Expected: 10
+    Remodel Passed.		Current: 10	Expected: 10
+    Smithy Passed.		Current: 10	Expected: 10
+    Village Passed.		Current: 10	Expected: 10
+    Baron Passed.		Current: 10	Expected: 10
+    Great_Hall Passed.		Current: 8	Expected: 8
+
+ _____________________________________________________________________________
+|                                                                             |
+|                               baron TESTING                                 |
+|                                                                             |
+|             SECOND ROUND OF TESTS: GAIN ESTATE CARD BUT NO COINS            |
+|_____________________________________________________________________________|
+
+   Test 1.10: Verify baron was Played
+    Current Played: 0		Expected Played: 15
+
+   Test 4.11: Verify Player Buys Count
+    Current Buys: 1		Expected Buys: 2
+
+   Test 4.12: Verify Player Coin Count
+    Current Coins: 4		Expected Coins: 4
+
+   Test 4.13: Verify Current Hand Count
+    Current Hand Count: 7	Expected Hand Count: 4
+
+   Test 4.14: Verify Player Number of Actions
+    Current Actions: 1		Expected Actions: 0
+
+   Test 4.15: Verify Current Player Score
+    Current Score: 2		Expected Score: 3
+
+   Test 4.16: Verify Other Player Score
+    Current Score: 0		Expected Score: 0
+
+   Test 4.17: Verify Treasure and Victory Card Supply Unchanged
+    Curse Passed.		Current: 10	Expected: 10
+    Estate Passed.		Current: 8	Expected: 8
+    Duchy Passed.		Current: 8	Expected: 8
+    Province Passed.		Current: 8	Expected: 8
+    Copper Passed.		Current: 46	Expected: 46
+    Silver Passed.		Current: 40	Expected: 40
+    Gold Passed.		Current: 30	Expected: 30
+
+   Test 4.18: Verify Kingdom Card Supply Unchanged
+    Adventurer Passed.		Current: 10	Expected: 10
+    Council_Room Passed.	Current: 10	Expected: 10
+    Feast Passed.		Current: 10	Expected: 10
+    Gardens Passed.		Current: 8	Expected: 8
+    Mine Passed.		Current: 10	Expected: 10
+    Remodel Passed.		Current: 10	Expected: 10
+    Smithy Passed.		Current: 10	Expected: 10
+    Village Passed.		Current: 10	Expected: 10
+    Baron Passed.		Current: 10	Expected: 10
+    Great_Hall Passed.		Current: 8	Expected: 8
+
+ _____________________________________________________________________________
+|                                                                             |
+|                           baron TESTING SUMMARY                             |
+|_____________________________________________________________________________|
+
+    			Test 4.1 Failed.
+    			Test 4.2 Failed.
+    			Test 4.3 Failed.
+    			Test 4.4 Failed.
+    			Test 4.5 Failed.
+    Test 4.6 Passed.
+    Test 4.7 Passed.
+    Test 4.8 Passed.
+    Test 4.9 Passed.
+    			Test 4.10 Failed.
+    			Test 4.11 Failed.
+    Test 4.12 Passed.
+    			Test 4.13 Failed.
+    			Test 4.14 Failed.
+    			Test 4.15 Failed.
+    Test 4.16 Passed.
+    Test 4.17 Passed.
+    Test 4.18 Passed.
+
+    8 Out of 18 Tests Passed
+ _____________________________________________________________________________
+|                                                                             |
+|                         baron TESTING COMPLETED                             |
+|_____________________________________________________________________________|
+
